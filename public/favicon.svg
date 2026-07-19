@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="thread" x1="10" y1="0" x2="54" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8de6d1" />
+      <stop offset=".55" stop-color="#f6d98f" />
+      <stop offset="1" stop-color="#d49a50" />
+    </linearGradient>
+    <linearGradient id="warp" x1="0" y1="20" x2="0" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#78dff1" />
+      <stop offset=".52" stop-color="#79cbd5" />
+      <stop offset="1" stop-color="#f6d98f" />
+    </linearGradient>
+    <linearGradient id="energy" x1="0" y1="33" x2="0" y2="47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#82deea" />
+      <stop offset="1" stop-color="#4ba7c4" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#2f5f50" />
+      <stop offset=".58" stop-color="#18382d" />
+      <stop offset="1" stop-color="#0f241d" />
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#glow)" />
+  <path d="M9 39C20 17 43 16 55 39" fill="none" stroke="#d2a64a" stroke-width="5.5" stroke-linecap="round" />
+  <path d="M16 39C25 31 31 45 38 36C44 29 49 38 55 31" fill="none" stroke="url(#thread)" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M22 23.84V47M32 21.27V48M42 23.93V47" fill="none" stroke="url(#warp)" stroke-width="3.8" stroke-linecap="round" />
+  <circle cx="32" cy="40" r="7.2" fill="url(#energy)" />
+</svg>

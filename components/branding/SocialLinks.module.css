@@ -1,0 +1,115 @@
+.socialLinks {
+  --social-bg: rgba(7, 31, 26, 0.82);
+  --social-bg-hover: rgba(13, 54, 44, 0.92);
+  --social-brass-dark: #735022;
+  --social-brass: #b5893f;
+  --social-brass-light: #dfbd70;
+  --social-icon: #dbc17e;
+  --social-icon-hover: #f0d995;
+  --social-arcane: #82d7c7;
+  --social-shadow: rgba(24, 15, 8, 0.62);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  padding: 5px 7px;
+  background: linear-gradient(135deg, rgba(8, 36, 29, 0.86), rgba(18, 35, 28, 0.72));
+  border: 1px solid rgba(181, 137, 63, 0.55);
+  border-radius: 2px;
+  box-shadow: 0 5px 14px rgba(24, 15, 8, 0.32), inset 0 1px 0 rgba(239, 210, 139, 0.12);
+}
+
+.socialLink {
+  position: relative;
+  display: inline-flex;
+  width: 29px;
+  height: 29px;
+  align-items: center;
+  justify-content: center;
+  color: var(--social-icon);
+  background: radial-gradient(circle at 35% 25%, rgba(223, 189, 112, 0.12), transparent 42%), rgba(6, 30, 25, 0.72);
+  border: 1px solid rgba(181, 137, 63, 0.58);
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(30, 18, 8, 0.24), 0 2px 5px rgba(21, 13, 7, 0.42);
+  cursor: url("/art/cursor/mouse.png") 2 2, pointer;
+  transition: transform 180ms ease, color 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.socialLink svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.socialLink:hover,
+.socialLink:focus-visible {
+  transform: translateY(-2px);
+  color: var(--social-icon-hover);
+  background-color: var(--social-bg-hover);
+  border-color: rgba(223, 189, 112, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(240, 217, 149, 0.12), 0 4px 9px rgba(21, 13, 7, 0.48), 0 0 9px rgba(130, 215, 199, 0.12);
+}
+
+.socialLink:focus-visible {
+  outline: 2px solid rgba(130, 215, 199, 0.86);
+  outline-offset: 3px;
+}
+
+.socialLink:active { transform: translateY(0) scale(0.96); }
+
+.socialLink::after {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 50%;
+  z-index: 2;
+  padding: 3px 6px;
+  color: #e7d2a1;
+  background: rgba(7, 31, 26, 0.96);
+  border: 1px solid rgba(181, 137, 63, 0.66);
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(24, 15, 8, 0.42);
+  content: attr(data-tooltip);
+  font-family: var(--sans-cn);
+  font-size: 0.72rem;
+  line-height: 1.3;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -2px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  white-space: nowrap;
+}
+
+.socialLink:hover::after,
+.socialLink:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.disabled:hover,
+.disabled:active {
+  transform: none;
+  color: var(--social-icon);
+  background-color: transparent;
+  border-color: rgba(181, 137, 63, 0.58);
+  box-shadow: inset 0 0 0 1px rgba(30, 18, 8, 0.24), 0 2px 5px rgba(21, 13, 7, 0.42);
+}
+
+.disabled:hover::after { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 640px) {
+  .socialLinks { gap: 6px; padding: 4px 6px; }
+  .socialLink { width: 28px; height: 28px; }
+  .socialLink svg { width: 15px; height: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .socialLink,
+  .socialLink::after { transition: none; }
+  .socialLink:hover { transform: none; }
+}

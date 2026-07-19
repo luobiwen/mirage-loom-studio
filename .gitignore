@@ -1,0 +1,86 @@
+# Dependencies and Next.js build output
+node_modules/
+.next/
+out/
+
+# Environment variables and local Vercel state
+.env
+.env.*
+!.env.example
+.vercel/
+
+# Logs, reports, and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+coverage/
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# Editor and operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+
+# Original design and 3D source files
+*.psd
+*.psb
+*.ai
+*.ait
+*.eps
+*.indd
+*.indl
+*.sketch
+*.fig
+*.xd
+*.xcf
+*.kra
+*.clip
+*.procreate
+*.ase
+*.aseprite
+*.blend
+*.blend1
+*.blend2
+*.fbx
+*.obj
+*.mtl
+*.max
+*.ma
+*.mb
+*.c4d
+*.3ds
+*.spp
+*.sbsar
+
+# Local original-art packs and personal source images
+/fantasy_weaver_character_layer_pack/
+/magical_loom_layer_pack/
+/幻境织机_分层素材包/
+/bbq版造型.png
+/bb的照片.jpg
+/鼠标.png
+
+# Unused/raw art backups under public (keep locally; do not deploy)
+/public/art/fantasy-weaver/
+/public/art/magical-loom/aligned/*.png
+/public/art/magical-loom/aligned/00_background_filled_approx.webp
+/public/art/magical-loom/aligned/02_machine.webp
+/public/art/magical-loom/aligned/05_foreground_objects.webp
+/public/art/magical-loom/composite_preview.png
+/public/art/magical-loom/layer_offsets.json
+/public/art/weavers/*.png
+/public/art/weavers/*.jpg
+/public/art/README.md
+/public/social-avatar.png

@@ -1,0 +1,145 @@
+.title {
+  display: block;
+  width: clamp(13.6rem, 37.8vw, 32.8rem);
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+  transform: translateX(clamp(-36px, -2.4vw, -18px));
+}
+
+.title text {
+  paint-order: stroke fill;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 2;
+  text-rendering: geometricPrecision;
+}
+
+.titleGroup {
+  isolation: isolate;
+}
+
+.enamelReflection {
+  opacity: 0.46;
+}
+
+.ambientReflection {
+  opacity: 0.42;
+  mix-blend-mode: screen;
+}
+
+.circuitLayer {
+  fill: none;
+}
+
+.circuit {
+  stroke: #d6ad59;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.22;
+}
+
+.circuitFlow {
+  stroke: #f2d98a;
+  stroke-dasharray: 14 92;
+  opacity: 0.46;
+}
+
+.circuitNodes circle {
+  fill: #e1bd68;
+  stroke: #68451e;
+  stroke-width: 1.2;
+  opacity: 0.5;
+}
+
+.gearLayer {
+  pointer-events: none;
+}
+
+.gear {
+  opacity: 0.94;
+  shape-rendering: geometricPrecision;
+}
+
+.gearSpin {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animated .gearSpin {
+  animation: gear-turn 24s linear infinite;
+}
+
+.animated .gearSpinReverse {
+  animation-direction: reverse;
+  animation-duration: 29s;
+}
+
+.animated .circuitFlow {
+  animation: circuit-flow 8s linear infinite, circuit-pulse 6.5s ease-in-out infinite;
+}
+
+.animated .circuitFlowDelayed {
+  animation-delay: -3.8s, -2.4s;
+}
+
+.animated .enamelReflection {
+  animation: enamel-sheen 15s ease-in-out infinite;
+}
+
+@keyframes circuit-flow {
+  to {
+    stroke-dashoffset: -106;
+  }
+}
+
+@keyframes circuit-pulse {
+  0%, 100% {
+    opacity: 0.43;
+  }
+
+  46% {
+    opacity: 0.68;
+  }
+}
+
+@keyframes enamel-sheen {
+  0%, 62%, 100% {
+    opacity: 0.5;
+  }
+
+  74% {
+    opacity: 0.68;
+  }
+}
+
+@keyframes gear-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    width: clamp(14rem, 80vw, 25rem);
+  }
+
+  .circuitDetail,
+  .gearMinor {
+    display: none;
+  }
+
+  .circuit {
+    stroke-width: 2.7;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated .circuitFlow,
+  .animated .enamelReflection,
+  .animated .gearSpin {
+    animation: none;
+  }
+}
