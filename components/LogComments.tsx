@@ -67,6 +67,24 @@ export function LogComments({ slug }: { slug: string }) {
     }
   };
 
+  const deleteComment = (commentId: string) => {
+    if (!window.confirm("确定要删除这条评论吗？")) return;
+
+    const nextComments = comments.filter((comment) => comment.id !== commentId);
+    setComments(nextComments);
+
+    try {
+      if (nextComments.length > 0) {
+        window.localStorage.setItem(`${storagePrefix}${slug}`, JSON.stringify(nextComments));
+      } else {
+        window.localStorage.removeItem(`${storagePrefix}${slug}`);
+      }
+      setNotice("评论已删除。");
+    } catch {
+      setNotice("评论已从当前页面移除，但浏览器存储更新失败。");
+    }
+  };
+
   return (
     <section className="log-comments" aria-labelledby="log-comments-title">
       <div className="log-comments-heading">
@@ -80,10 +98,18 @@ export function LogComments({ slug }: { slug: string }) {
           {comments.map((comment) => (
             <li key={comment.id} className="log-comment">
               <span className="log-comment-mark" aria-hidden="true">{comment.name.slice(0, 1)}</span>
-              <div>
+              <div className="log-comment-copy">
                 <div className="log-comment-meta">
                   <strong>{comment.name}</strong>
                   <time dateTime={comment.createdAt}>{formatCommentDate(comment.createdAt)}</time>
+                  <button
+                    className="log-comment-delete"
+                    type="button"
+                    aria-label={`删除 ${comment.name} 的评论`}
+                    onClick={() => deleteComment(comment.id)}
+                  >
+                    删除
+                  </button>
                 </div>
                 <p>{comment.message}</p>
               </div>

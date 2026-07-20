@@ -1011,6 +1011,7 @@ main > .section {
   font-family: var(--hand-cn);
   font-size: 1.15rem;
 }
+.log-comment-copy { min-width: 0; }
 .log-comment-meta {
   display: flex;
   align-items: baseline;
@@ -1019,6 +1020,22 @@ main > .section {
 }
 .log-comment-meta strong { font-family: var(--hand-cn); }
 .log-comment-meta time { color: var(--parchment-ink-muted); font-family: var(--hand-cn); font-size: 0.82rem; }
+.log-comment-delete {
+  margin-left: auto;
+  padding: 3px 9px;
+  border: 1px solid rgba(105, 78, 39, 0.42);
+  background: rgba(255, 251, 237, 0.64);
+  color: var(--parchment-ink-muted);
+  font-family: var(--hand-cn);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.log-comment-delete:hover,
+.log-comment-delete:focus-visible {
+  border-color: #9b493f;
+  color: #863b34;
+  outline: none;
+}
 .log-comment p { margin: 7px 0 0; line-height: 1.75; white-space: pre-wrap; }
 .log-comment-form {
   display: grid;
