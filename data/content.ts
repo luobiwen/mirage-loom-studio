@@ -295,6 +295,7 @@ export const weavers: Weaver[] = [
     name: "bb",
     title: "创始织造师",
     image: "/art/weavers/bb.webp",
+    sideImage: "/art/weavers/bbq-cutout-v2.webp",
     duties: [],
     interests: "喜欢把遥远、模糊、神秘的幻境整理成可以被触碰的真实作品。",
     bio: "罗碧文，2026 年毕业于中山大学软件工程学院。幻境织机的创造者，一个神秘高冷的魔法师，擅长幻境织造，程序织造，魔法系统调试。"
