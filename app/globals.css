@@ -675,6 +675,10 @@ main > .section {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+.weaver-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
 .notice-card, .world-card, .artifact-card, .weaver-card, .codex-feature, .log-row {
   position: relative;
   background:
@@ -827,19 +831,21 @@ main > .section {
 .log-row.has-cover h2, .log-row.has-cover h3 { font-size: clamp(1.55rem, 2.4vw, 2.35rem); }
 .log-row p { margin: 0; }
 .artifact-card, .weaver-card { padding: 22px; }
-.weaver-card.has-side-image {
-  grid-column: span 2;
+.weaver-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(150px, 0.52fr);
+  grid-template-columns: minmax(0, 1fr) minmax(130px, 0.5fr);
   gap: clamp(8px, 1.2vw, 14px);
   align-items: center;
   overflow: hidden;
+  min-height: 320px;
 }
 .weaver-card-copy {
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
-.weaver-side-image {
+.weaver-side-image,
+.weaver-side-slot {
   position: relative;
   align-self: stretch;
   justify-self: start;
@@ -1145,13 +1151,19 @@ main > .section {
   .notice-card.important { grid-column: auto; }
   .weaver-card.has-side-image {
     grid-column: auto;
+  }
+  .weaver-card {
     grid-template-columns: 1fr;
+    min-height: 0;
   }
   .weaver-side-image {
     justify-self: center;
     width: min(82vw, 230px);
     min-height: 250px;
     margin: 0 0 -14px;
+  }
+  .weaver-side-slot {
+    display: none;
   }
   .log-row-copy { grid-template-columns: 1fr; gap: 8px; }
   .log-row.has-cover { grid-template-columns: 1fr; min-height: 0; }

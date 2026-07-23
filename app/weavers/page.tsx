@@ -35,10 +35,12 @@ export default function WeaversPage() {
               )}
               <small>{weaver.interests}</small>
             </div>
-            {weaver.sideImage && (
+            {weaver.sideImage ? (
               <div className="weaver-side-image">
                 <Image src={weaver.sideImage} alt={`${weaver.name} BBQ 版造型`} fill sizes="(max-width: 900px) 78vw, 320px" />
               </div>
+            ) : (
+              <div className="weaver-side-slot" aria-hidden="true" />
             )}
           </article>
         ))}
