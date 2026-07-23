@@ -22,7 +22,7 @@ export default function WeaversPage() {
             <div className="weaver-card-copy">
               <div className="portrait-placeholder">
                 {weaver.image ? (
-                  <Image src={weaver.image} alt={`${weaver.name} 的照片`} fill sizes={weaver.sideImage ? "240px" : "92px"} />
+                  <Image src={weaver.image} alt={`${weaver.name} 的照片`} fill sizes="128px" />
                 ) : (
                   <BookOpen size={36} />
                 )}
