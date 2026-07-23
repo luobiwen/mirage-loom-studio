@@ -283,11 +283,12 @@ export const artifacts: Artifact[] = [
 export const weavers: Weaver[] = [
   {
     slug: "first-weaver-a",
-    name: "织造师 A",
+    name: "qiqi",
     title: "首席织造师 / 联合织造师",
+    image: "/art/weavers/qiqi.webp",
     duties: ["世界观采样", "叙事设计", "角色与场景概念"],
     interests: "喜欢旧车票、植物标本、会发光的注释线。",
-    bio: "来自中山大学的创作者之一，擅长把一点点奇怪的念头整理成可以进入的世界。"
+    bio: "秦婉舒，2026 年毕业于中山大学计算机学院。幻境织机首席织造师，温柔有趣又拥有强大的魔法力量，擅长把一点点奇怪的念头整理成可以进入的世界。"
   },
   {
     slug: "first-weaver-b",
@@ -297,7 +298,7 @@ export const weavers: Weaver[] = [
     sideImage: "/art/weavers/bbq-cutout-v2.webp",
     duties: [],
     interests: "喜欢把遥远、模糊、神秘的幻境整理成可以被触碰的真实作品。",
-    bio: "罗碧文，2026 年毕业于中山大学软件工程学院。幻境织机的创造者，一个神秘的魔法师，擅长幻境织造，程序织造，魔法系统调试。"
+    bio: "罗碧文，2026 年毕业于中山大学软件工程学院。幻境织机的创造者，一个神秘高冷的魔法师，擅长幻境织造，程序织造，魔法系统调试。"
   }
 ];
 
