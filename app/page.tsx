@@ -131,7 +131,7 @@ export default function Home() {
               <div className="weaver-card-copy">
                 <div className="portrait-placeholder">
                   {weaver.image ? (
-                    <Image src={weaver.image} alt={`${weaver.name} 的照片`} fill sizes="128px" />
+                    <Image src={weaver.image} alt={`${weaver.name} 的照片`} fill sizes="240px" />
                   ) : (
                     <BookOpen size={36} />
                   )}
