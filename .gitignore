@@ -26,6 +26,13 @@ temp/
 *.swo
 *~
 
+# Non-site local workspace (art sources, exports, utilities, and scratch files)
+/_local_workspace/
+/.photopea-profile-*/
+/output/
+/scripts/
+/VERITY_Live2D/
+
 # Editor and operating-system metadata
 .DS_Store
 Thumbs.db
