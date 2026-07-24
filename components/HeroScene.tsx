@@ -188,15 +188,15 @@ export function HeroScene() {
       <div className="hero-stage">
         <div className="loom-canvas" aria-label="魔法实验室中，幻境织机正在编织梦境">
           <div className="loom-artboard loom-background-artboard" aria-hidden="true">
-            <Image className="hero-layer lab-background parallax-back" src={`${fixedLoom}/background.png`} alt="" fill priority sizes="100vw" onLoad={() => markAssetLoaded("lab-background")} onError={() => markAssetLoaded("lab-background")} />
+            <Image className="hero-layer lab-background parallax-back" src={`${fixedLoom}/background.webp`} alt="" fill priority sizes="100vw" onLoad={() => markAssetLoaded("lab-background")} onError={() => markAssetLoaded("lab-background")} />
           </div>
           <div className="loom-artboard loom-rear-artboard" aria-hidden="true">
-            <Image className="hero-layer loom-slice loom-rear-arch parallax-rear" src={`${fixedLoom}/rear-arch.png`} alt="" width={238} height={479} priority sizes="20vw" onLoad={() => markAssetLoaded("rear-arch")} onError={() => markAssetLoaded("rear-arch")} />
+            <Image className="hero-layer loom-slice loom-rear-arch parallax-rear" src={`${fixedLoom}/rear-arch.webp`} alt="" width={238} height={479} priority sizes="20vw" onLoad={() => markAssetLoaded("rear-arch")} onError={() => markAssetLoaded("rear-arch")} />
           </div>
           <div className="loom-artboard loom-gear-artboard" aria-hidden="true">
-            <Image className="hero-layer loom-slice loom-gear-left parallax-mid" src={`${fixedLoom}/gear-left.png`} alt="" width={239} height={247} priority sizes="18vw" onLoad={() => markAssetLoaded("gear-left")} onError={() => markAssetLoaded("gear-left")} />
-            <Image className="hero-layer loom-slice loom-gear-right parallax-mid" src={`${fixedLoom}/gear-right.png`} alt="" width={244} height={423} priority sizes="18vw" onLoad={() => markAssetLoaded("gear-right")} onError={() => markAssetLoaded("gear-right")} />
-            <Image className="hero-layer loom-slice loom-gear-top parallax-mid" src={`${fixedLoom}/gear-top.png`} alt="" width={126} height={168} priority sizes="10vw" onLoad={() => markAssetLoaded("gear-top")} onError={() => markAssetLoaded("gear-top")} />
+            <Image className="hero-layer loom-slice loom-gear-left parallax-mid" src={`${fixedLoom}/gear-left.webp`} alt="" width={239} height={247} priority sizes="18vw" onLoad={() => markAssetLoaded("gear-left")} onError={() => markAssetLoaded("gear-left")} />
+            <Image className="hero-layer loom-slice loom-gear-right parallax-mid" src={`${fixedLoom}/gear-right.webp`} alt="" width={244} height={423} priority sizes="18vw" onLoad={() => markAssetLoaded("gear-right")} onError={() => markAssetLoaded("gear-right")} />
+            <Image className="hero-layer loom-slice loom-gear-top parallax-mid" src={`${fixedLoom}/gear-top.webp`} alt="" width={126} height={168} priority sizes="10vw" onLoad={() => markAssetLoaded("gear-top")} onError={() => markAssetLoaded("gear-top")} />
           </div>
           <div className="loom-artboard loom-crystal-artboard" aria-hidden="true">
             <div className="loom-parallax-frame">
@@ -209,8 +209,8 @@ export function HeroScene() {
             </div>
           </div>
           <div className="loom-artboard loom-front-artboard" aria-hidden="true">
-            <Image className="hero-layer loom-slice loom-foreground-left parallax-front" src={`${fixedLoom}/foreground-left.png`} alt="" width={532} height={535} sizes="38vw" onLoad={() => markAssetLoaded("foreground-left")} onError={() => markAssetLoaded("foreground-left")} />
-            <Image className="hero-layer loom-slice loom-foreground-right parallax-front" src={`${fixedLoom}/foreground-right.png`} alt="" width={672} height={446} sizes="48vw" onLoad={() => markAssetLoaded("foreground-right")} onError={() => markAssetLoaded("foreground-right")} />
+            <Image className="hero-layer loom-slice loom-foreground-left parallax-front" src={`${fixedLoom}/foreground-left.webp`} alt="" width={532} height={535} sizes="38vw" onLoad={() => markAssetLoaded("foreground-left")} onError={() => markAssetLoaded("foreground-left")} />
+            <Image className="hero-layer loom-slice loom-foreground-right parallax-front" src={`${fixedLoom}/foreground-right.webp`} alt="" width={672} height={446} sizes="48vw" onLoad={() => markAssetLoaded("foreground-right")} onError={() => markAssetLoaded("foreground-right")} />
           </div>
           <svg className="intro-thread-sigil" viewBox="0 0 1000 520" aria-hidden="true">
             <defs>

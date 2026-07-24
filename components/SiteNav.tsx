@@ -12,7 +12,7 @@ import { SocialLinks } from "@/components/branding/SocialLinks";
 export function SiteNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
   const scrolledRef = useRef(false);
 
   useEffect(() => {
@@ -22,10 +22,9 @@ export function SiteNav() {
     const updateScrollState = () => {
       frame = null;
       const nextScrolled = window.scrollY > window.innerHeight * 0.45;
-      if (nextScrolled !== scrolledRef.current) {
-        scrolledRef.current = nextScrolled;
-        setScrolled(nextScrolled);
-      }
+      if (nextScrolled === scrolledRef.current) return;
+      scrolledRef.current = nextScrolled;
+      headerRef.current?.classList.toggle("is-scrolled", nextScrolled);
     };
 
     const onScroll = () => {
@@ -57,10 +56,10 @@ export function SiteNav() {
   }, []);
 
   return (
-    <header className={`site-nav ${scrolled ? "is-scrolled" : ""}`}>
+    <header ref={headerRef} className="site-nav">
       <div className="brand-corner">
         <Link className="nav-logo" href="/#home" onClick={() => setOpen(false)}>
-          <LogoMark compact={scrolled} />
+          <LogoMark />
         </Link>
         {pathname === "/" && (
           <SocialLinks

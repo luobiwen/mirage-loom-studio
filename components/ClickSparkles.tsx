@@ -1,42 +1,48 @@
 "use client";
 
-import type { CSSProperties } from "react";
-import { useEffect, useState } from "react";
-
-type Sparkle = {
-  id: number;
-  x: number;
-  y: number;
-  color: string;
-  angle: number;
-  distance: number;
-  size: number;
-};
+import { useEffect, useRef } from "react";
 
 const sparklePalette = ["#1f5a43", "#2f6f4f", "#7a8f3a", "#c99b49", "#f2c86d"];
 
 export function ClickSparkles() {
-  const [sparkles, setSparkles] = useState<Sparkle[]>([]);
+  const rootRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return;
 
     let id = 0;
     const onPointerDown = (event: PointerEvent) => {
       if (event.pointerType === "touch") return;
-      const next = Array.from({ length: 13 }, (_, index) => ({
-        id: id++,
-        x: event.clientX,
-        y: event.clientY,
-        color: sparklePalette[(id + index) % sparklePalette.length],
-        angle: index * 27.7,
-        distance: 34 + (index % 5) * 8,
-        size: 5 + (index % 4) * 1.6
-      }));
-      setSparkles((current) => [...current.slice(-50), ...next]);
+
+      const batch = document.createDocumentFragment();
+      const nodes: HTMLElement[] = [];
+
+      for (let index = 0; index < 13; index += 1) {
+        const sparkle = document.createElement("i");
+        sparkle.style.setProperty("--x", `${event.clientX}px`);
+        sparkle.style.setProperty("--y", `${event.clientY}px`);
+        sparkle.style.setProperty("--angle", `${index * 27.7}deg`);
+        sparkle.style.setProperty("--distance", `${34 + (index % 5) * 8}px`);
+        sparkle.style.setProperty("--size", `${5 + (index % 4) * 1.6}px`);
+        sparkle.style.color = sparklePalette[(id + index) % sparklePalette.length];
+        batch.appendChild(sparkle);
+        nodes.push(sparkle);
+      }
+
+      id += 13;
+      root.appendChild(batch);
+
+      // 与原先一致：最多保留约 50 个火花节点
+      while (root.childElementCount > 63) {
+        root.firstElementChild?.remove();
+      }
+
       window.setTimeout(() => {
-        setSparkles((current) => current.filter((sparkle) => !next.some((item) => item.id === sparkle.id)));
+        nodes.forEach((node) => node.remove());
       }, 900);
     };
 
@@ -44,23 +50,5 @@ export function ClickSparkles() {
     return () => window.removeEventListener("pointerdown", onPointerDown);
   }, []);
 
-  return (
-    <div className="click-sparkles" aria-hidden="true">
-      {sparkles.map((sparkle) => (
-        <i
-          key={sparkle.id}
-          style={
-            {
-              "--x": `${sparkle.x}px`,
-              "--y": `${sparkle.y}px`,
-              "--angle": `${sparkle.angle}deg`,
-              "--distance": `${sparkle.distance}px`,
-              "--size": `${sparkle.size}px`,
-              color: sparkle.color
-            } as CSSProperties
-          }
-        />
-      ))}
-    </div>
-  );
+  return <div ref={rootRef} className="click-sparkles" aria-hidden="true" />;
 }

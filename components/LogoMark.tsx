@@ -1,6 +1,6 @@
 import { useId } from "react";
 
-export function LogoMark({ compact = false }: { compact?: boolean }) {
+export function LogoMark() {
   const idPrefix = useId().replace(/[^a-zA-Z0-9_-]/g, "");
   const verticalThreadGradient = `logo-vertical-thread-${idPrefix}`;
 
@@ -21,7 +21,7 @@ export function LogoMark({ compact = false }: { compact?: boolean }) {
         <circle className="logo-core" cx="110" cy="56" r="14" fill="#75cfc2" />
       </svg>
       <span className="logo-copy">
-        <strong>{compact ? "幻境织机" : "幻境织机"}</strong>
+        <strong>幻境织机</strong>
         <small>Mirage Loom</small>
       </span>
     </span>

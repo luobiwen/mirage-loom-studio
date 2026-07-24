@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, type SVGProps } from "react";
+import type { SVGProps } from "react";
 import styles from "./SocialLinks.module.css";
 
 interface SocialLinksProps {
@@ -25,13 +23,6 @@ const socialPlatforms: Array<{
 
 export function SocialLinks({ facebookUrl, weiboUrl, steamUrl, className }: SocialLinksProps) {
   const urls = { facebook: facebookUrl, weibo: weiboUrl, steam: steamUrl };
-  const missingPlatforms = socialPlatforms.filter((platform) => !urls[platform.key]).map((platform) => platform.label).join("、");
-
-  useEffect(() => {
-    if (process.env.NODE_ENV === "development" && missingPlatforms) {
-      console.info(`[Mirage Loom] 社交通讯入口尚未配置：${missingPlatforms}。请设置对应的 NEXT_PUBLIC_*_URL 环境变量。`);
-    }
-  }, [missingPlatforms]);
 
   return (
     <div className={[styles.socialLinks, className].filter(Boolean).join(" ")} role="group" aria-label="幻境织机社交通讯入口">
