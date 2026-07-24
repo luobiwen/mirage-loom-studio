@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { logs } from "@/data/content";
+import { getVisibleLogs } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "织造日志",
@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function LogsPage() {
+  const logs = getVisibleLogs();
   return (
     <main className="archive-page">
       <header className="page-hero">

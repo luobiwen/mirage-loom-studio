@@ -15,7 +15,7 @@ export default function WorldsPage() {
       <header className="page-hero">
         <span className="archive-label">World Archives</span>
         <h1>幻境档案</h1>
-        <p>每一份档案都是一座独立世界的入口。这里的内容均为虚构占位，方便未来替换为真实游戏资料。</p>
+        <p>每一份档案都是一座独立世界的入口，点击查看完整档案下载游戏。</p>
       </header>
       <section className="section world-grid">
         {worlds.map((world, index) => (

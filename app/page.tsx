@@ -6,10 +6,11 @@ import { HeroScene } from "@/components/HeroScene";
 import { HomeScrollEffects } from "@/components/HomeScrollEffects";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CardGlyph } from "@/components/CardGlyph";
-import { announcements, artifacts, codexEntries, logs, weavers, worlds } from "@/data/content";
+import { announcements, artifacts, codexEntries, getVisibleLogs, weavers, worlds } from "@/data/content";
 import { cx } from "@/lib/utils";
 
 export default function Home() {
+  const logs = getVisibleLogs();
   return (
     <main>
       <HomeScrollEffects />

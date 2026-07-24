@@ -38,6 +38,8 @@ export type LogEntry = {
   body: string | LogBodyBlock[];
   coverImage?: string;
   coverAlt?: string;
+  /** 列表中隐藏，数据与详情页保留 */
+  hidden?: boolean;
 };
 
 export type Artifact = {
@@ -63,22 +65,22 @@ export type Weaver = {
 export const announcements = [
   {
     id: "ML-NOTICE-001",
-    date: "虚构占位 / 2026.07",
+    date: "2026.07",
     title: "第一台幻境织机完成网页接线",
     text: "官网第一版开始试运行：织机场景、世界档案、图鉴、日志与收藏柜已经接入同一根发光丝线。",
     important: true
   },
   {
     id: "ML-DEMO-014",
-    date: "虚构占位 / 待定",
-    title: "《月井车站》Demo 采样中",
-    text: "我们正在记录一座会在午夜换轨的车站，以及每位旅客遗落在月光里的愿望。"
+    date: "2026.07",
+    title: "《异常恋人：记忆覆写程序》Demo 采样中",
+    text: "我们正在记录一个异常的计算机程序，以及一个男人畸形的爱。"
   },
   {
     id: "ML-LOG-009",
-    date: "虚构占位 / 本周",
-    title: "角色袖口为什么需要三层针脚",
-    text: "一篇关于小动画、角色性格与制作时间彼此拉扯的织造日志。"
+    date: "2026.07",
+    title: "官网织成之日",
+    text: "幻境织机官网第一版正式完成。记录魔法工坊视觉风格、数据驱动的网站结构，以及首页整屏滚动体验的设计过程。"
   }
 ];
 
@@ -86,7 +88,7 @@ export const worlds: World[] = [
   {
     slug: "moonwell-station",
     archiveId: "MIR-001",
-    title: "月井车站",
+    title: "异常恋人：记忆覆写程序",
     subtitle: "A platform where wishes change trains",
     status: "织造中",
     genre: "叙事解谜 / 轻探索",
@@ -219,6 +221,7 @@ export const logs: LogEntry[] = [
     readingTime: "3 分钟",
     author: "织造记录员",
     worldSlug: "moonwell-station",
+    hidden: true,
     body: "占位日志：后续可以替换为角色拆层、骨骼绑定或 CSS 动画经验。"
   },
   {
@@ -230,6 +233,7 @@ export const logs: LogEntry[] = [
     readingTime: "5 分钟",
     author: "联合织造师",
     worldSlug: "tin-flower-archive",
+    hidden: true,
     body: "占位日志：适合记录 UI 设计取舍、颜色系统和信息架构。"
   },
   {
@@ -241,6 +245,7 @@ export const logs: LogEntry[] = [
     readingTime: "2 分钟",
     author: "幻境织造师",
     worldSlug: "tin-flower-archive",
+    hidden: true,
     body: "占位日志：失败方案同样值得记录，它们会让作品更真实。"
   }
 ];
@@ -312,4 +317,8 @@ export function getCodex(slug: string) {
 
 export function getLog(slug: string) {
   return logs.find((entry) => entry.slug === slug);
+}
+
+export function getVisibleLogs() {
+  return logs.filter((entry) => !entry.hidden);
 }
