@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import "@fontsource/lxgw-wenkai/index.css";
 import "@fontsource/ma-shan-zheng/index.css";
-import "./fonts-local.css";
 import "./globals.css";
 import { ClickSparkles } from "@/components/ClickSparkles";
 import { SiteNav } from "@/components/SiteNav";
