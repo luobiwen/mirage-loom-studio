@@ -209,8 +209,21 @@ export function HeroScene() {
             </div>
           </div>
           <div className="loom-artboard loom-front-artboard" aria-hidden="true">
-            <Image className="hero-layer loom-slice loom-foreground-left parallax-front" src={`${fixedLoom}/foreground-left.png`} alt="" width={532} height={535} sizes="38vw" onLoad={() => markAssetLoaded("foreground-left")} onError={() => markAssetLoaded("foreground-left")} />
-            <Image className="hero-layer loom-slice loom-foreground-right parallax-front" src={`${fixedLoom}/foreground-right.png`} alt="" width={672} height={446} sizes="48vw" onLoad={() => markAssetLoaded("foreground-right")} onError={() => markAssetLoaded("foreground-right")} />
+            <Image className="hero-layer loom-slice loom-foreground-left parallax-front" src={`${fixedLoom}/foreground-left.png`} alt="" width={532} height={535} sizes="38vw" priority onLoad={() => markAssetLoaded("foreground-left")} onError={() => markAssetLoaded("foreground-left")} />
+            <Image
+              className="hero-layer loom-slice loom-foreground-right parallax-front"
+              src={`${fixedLoom}/foreground-right.webp`}
+              alt=""
+              width={672}
+              height={446}
+              sizes="48vw"
+              priority
+              onLoad={() => markAssetLoaded("foreground-right")}
+              onError={(event) => {
+                event.currentTarget.style.display = "none";
+                markAssetLoaded("foreground-right");
+              }}
+            />
           </div>
           <svg className="intro-thread-sigil" viewBox="0 0 1000 520" aria-hidden="true">
             <defs>
