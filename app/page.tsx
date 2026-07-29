@@ -6,11 +6,13 @@ import { HeroScene } from "@/components/HeroScene";
 import { HomeScrollEffects } from "@/components/HomeScrollEffects";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CardGlyph } from "@/components/CardGlyph";
-import { announcements, artifacts, codexEntries, getVisibleLogs, weavers, worlds } from "@/data/content";
+import { announcements, artifacts, getVisibleCodexEntries, getVisibleLogs, getVisibleWorlds, weavers } from "@/data/content";
 import { cx } from "@/lib/utils";
 
 export default function Home() {
   const logs = getVisibleLogs();
+  const worlds = getVisibleWorlds();
+  const codexEntries = getVisibleCodexEntries();
   return (
     <main>
       <HomeScrollEffects />
@@ -63,7 +65,7 @@ export default function Home() {
         </SectionHeader>
         <div className="codex-layout">
           <div className="codex-tabs" aria-label="图鉴条目">
-            {codexEntries.slice(0, 6).map((entry) => (
+            {codexEntries.map((entry) => (
               <Link key={entry.slug} href={`/codex/${entry.slug}`}>
                 <span>{entry.type}</span>
                 {entry.title}

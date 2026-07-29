@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CardGlyph } from "@/components/CardGlyph";
-import { codexEntries, getWorld } from "@/data/content";
+import { getVisibleCodexEntries, getWorld } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "世界图鉴",
@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function CodexPage() {
+  const codexEntries = getVisibleCodexEntries();
   return (
     <main className="archive-page">
       <header className="page-hero">

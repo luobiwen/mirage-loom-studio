@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CardGlyph } from "@/components/CardGlyph";
-import { worlds } from "@/data/content";
+import { getVisibleWorlds } from "@/data/content";
 import type { CSSProperties } from "react";
 
 export const metadata: Metadata = {
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function WorldsPage() {
+  const worlds = getVisibleWorlds();
   return (
     <main className="archive-page">
       <header className="page-hero">

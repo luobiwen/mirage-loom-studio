@@ -15,7 +15,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 export default function WorldDetailPage({ params }: { params: { slug: string } }) {
   const world = getWorld(params.slug);
   if (!world) notFound();
-  const relatedCodex = codexEntries.filter((entry) => entry.worldSlug === world.slug);
+  const relatedCodex = codexEntries.filter((entry) => entry.worldSlug === world.slug && !entry.hidden);
   const relatedLogs = logs.filter((entry) => entry.worldSlug === world.slug && !entry.hidden);
 
   return (

@@ -10,6 +10,8 @@ export type World = {
   summary: string;
   description: string;
   links: { label: string; href: string }[];
+  /** 列表中隐藏，数据与详情页保留 */
+  hidden?: boolean;
 };
 
 export type CodexEntry = {
@@ -20,6 +22,8 @@ export type CodexEntry = {
   tag: string;
   summary: string;
   body: string;
+  /** 列表中隐藏，数据与详情页保留 */
+  hidden?: boolean;
 };
 
 export type LogBodyBlock =
@@ -117,7 +121,8 @@ export const worlds: World[] = [
     links: [
       { label: "itch.io 占位", href: "#" },
       { label: "开发日志", href: "/logs" }
-    ]
+    ],
+    hidden: true
   }
 ];
 
@@ -138,7 +143,8 @@ export const codexEntries: CodexEntry[] = [
     type: "世界",
     tag: "照明 / 轨道标记",
     summary: "当灯芯变成蓝绿色，说明下一班列车会经过梦境浅层。",
-    body: "灯罩内侧绘有手工星图，旅客只能看见与自己有关的那一小段。"
+    body: "灯罩内侧绘有手工星图，旅客只能看见与自己有关的那一小段。",
+    hidden: true
   },
   {
     slug: "late-conductor",
@@ -156,7 +162,8 @@ export const codexEntries: CodexEntry[] = [
     type: "生物",
     tag: "机械植物",
     summary: "花瓣是薄锡片，叶脉中流动着低温墨水。",
-    body: "锡花在听见雨声时会展开旧文明的索引编号。演示条目，后续可替换。"
+    body: "锡花在听见雨声时会展开旧文明的索引编号。演示条目，后续可替换。",
+    hidden: true
   },
   {
     slug: "weather-drawer",
@@ -321,4 +328,12 @@ export function getLog(slug: string) {
 
 export function getVisibleLogs() {
   return logs.filter((entry) => !entry.hidden);
+}
+
+export function getVisibleWorlds() {
+  return worlds.filter((world) => !world.hidden);
+}
+
+export function getVisibleCodexEntries() {
+  return codexEntries.filter((entry) => !entry.hidden);
 }
