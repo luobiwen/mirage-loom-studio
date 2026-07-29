@@ -14,7 +14,7 @@ export default function WeaversPage() {
       <header className="page-hero">
         <span className="archive-label">Chief Weavers</span>
         <h1>首席织造师</h1>
-        <p>真诚、浪漫，也仍在努力调试。这里的姓名与头像是占位内容，后续可替换为真实资料。</p>
+        <p>真诚、浪漫，也仍在努力调试。</p>
       </header>
       <section className="section weaver-grid">
         {weavers.map((weaver) => (

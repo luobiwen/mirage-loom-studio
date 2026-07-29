@@ -13,7 +13,7 @@ export default function ArtifactsPage() {
       <header className="page-hero">
         <span className="archive-label">Relic Cabinet</span>
         <h1>圣物收藏</h1>
-        <p>收藏室仍在准备中。这里展示的是虚构占位商品结构，未来可替换为真实周边。</p>
+        <p>收藏室仍在准备中。</p>
       </header>
       <section className="section artifact-cabinet">
         {artifacts.map((artifact) => (

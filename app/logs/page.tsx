@@ -15,7 +15,7 @@ export default function LogsPage() {
       <header className="page-hero">
         <span className="archive-label">Weaving Logs</span>
         <h1>织造日志</h1>
-        <p>记录制作过程，也记录那些失败但有用的方案。当前文章为虚构占位。</p>
+        <p>记录制作过程，也记录那些失败但有用的方案。</p>
       </header>
       <section className="section log-list">
         {logs.map((log) => (

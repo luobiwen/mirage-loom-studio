@@ -15,7 +15,7 @@ export default function CodexPage() {
       <header className="page-hero">
         <span className="archive-label">World Compendium</span>
         <h1>世界图鉴与设定集</h1>
-        <p>像翻阅研究手册一样浏览幻境样本。所有条目目前均为虚构占位内容。</p>
+        <p>像翻阅研究手册一样浏览幻境样本。</p>
       </header>
       <section className="section codex-list">
         {codexEntries.map((entry) => (
