@@ -66,15 +66,15 @@ export const announcements = [
   {
     id: "ML-NOTICE-001",
     date: "2026.07",
-    title: "第一台幻境织机完成网页接线",
-    text: "官网第一版开始试运行：织机场景、世界档案、图鉴、日志与收藏柜已经接入同一根发光丝线。",
+    title: "幻境织机实验室正式开放",
+    text: "官网第一阶段现已上线。世界档案、角色图鉴、开发日志与收藏柜已完成基础接入，更多实验记录将随项目进度持续归档。",
     important: true
   },
   {
     id: "ML-DEMO-014",
     date: "2026.07",
     title: "《异常恋人：记忆覆写程序》Demo 采样中",
-    text: "我们正在记录一个异常的计算机程序，以及一个男人畸形的爱。"
+    text: "首个可玩版本正在搭建。战斗、探索与 Git 分支谜题已进入测试，一段被反复覆写的异常记忆正逐渐显形。"
   },
   {
     id: "ML-LOG-009",
@@ -89,14 +89,14 @@ export const worlds: World[] = [
     slug: "moonwell-station",
     archiveId: "MIR-001",
     title: "异常恋人：记忆覆写程序",
-    subtitle: "A platform where wishes change trains",
+    subtitle: "Exception Lovers: Memory Overwrite Program",
     status: "织造中",
-    genre: "叙事解谜 / 轻探索",
-    tone: "月光、列车、旧票据、温柔的谜题",
+    genre: "剧情解谜 / 战斗探索",
+    tone: "程序、解谜、战斗、爱情",
     accent: "#79c7b4",
-    summary: "一座只在月亮倒映进井水时出现的车站，载着迷路的人前往他们没有说出口的愿望。",
+    summary: "你在一座遭到异常侵蚀的废弃系统中醒来。记忆遗失，权限被夺，昔日守护这座世界的力量散落各处。夺回它们，找到出口。",
     description:
-      "玩家将整理车票、修补星轨、与误点的旅客交谈，在每一次发车前决定哪些记忆应该被带走，哪些应该留在站台。演示内容为虚构占位，后续可替换为真实游戏资料。",
+      "你在一座遭到异常侵蚀的废弃系统中醒来。记忆遗失，权限被夺，昔日守护这座世界的力量散落各处。夺回它们，找到出口。",
     links: [
       { label: "Steam 占位", href: "#" },
       { label: "试玩登记", href: "#join" }
@@ -125,17 +125,17 @@ export const codexEntries: CodexEntry[] = [
   {
     slug: "moonwell-ticket",
     worldSlug: "moonwell-station",
-    title: "会改签的月井车票",
-    type: "遗物",
+    title: "程序城邦",
+    type: "世界",
     tag: "票据 / 愿望校准",
-    summary: "票面目的地会根据持有者当晚最安静的念头改变。",
-    body: "研究员备注：车票边缘的银线并非装饰，而是一种极细的记忆导线。演示条目，后续可替换为正式设定。"
+    summary: "一座建立于古老安全系统内部的城邦。",
+    body: "在这里，程序并不知道自己是代码。扫描程序以骑士之名巡逻，病毒库保存着历代审判记录，防火墙成为环绕世界的边境，而日志则负责书写一切已经发生的历史。很久以前，这里曾由一位被称作“白骑士”的最高执行者守护。如今城邦已经废弃。至于它为什么会变成这样，现有记录并不完整。"
   },
   {
     slug: "platform-lantern",
     worldSlug: "moonwell-station",
-    title: "十三号站台灯",
-    type: "场景",
+    title: "程序城邦",
+    type: "世界",
     tag: "照明 / 轨道标记",
     summary: "当灯芯变成蓝绿色，说明下一班列车会经过梦境浅层。",
     body: "灯罩内侧绘有手工星图，旅客只能看见与自己有关的那一小段。"
@@ -143,10 +143,10 @@ export const codexEntries: CodexEntry[] = [
   {
     slug: "late-conductor",
     worldSlug: "moonwell-station",
-    title: "总是迟到的检票员",
+    title: "白骑士",
     type: "人物",
-    tag: "车站居民",
-    summary: "他负责确认每位旅客是否真的准备好离开。",
+    tag: "城邦守护者",
+    summary: "古老安全系统的最高执行程序。",
     body: "口袋里有三十七块停摆的怀表，每块都指向一次没能说出口的道别。"
   },
   {
@@ -161,16 +161,16 @@ export const codexEntries: CodexEntry[] = [
   {
     slug: "weather-drawer",
     worldSlug: "tin-flower-archive",
-    title: "天气抽屉",
+    title: "版本仓库",
     type: "科技",
-    tag: "档案装置",
-    summary: "打开不同抽屉，会闻到不同年代的风。",
+    tag: "版本仓库",
+    summary: "保存世界历史的古老系统。",
     body: "每个抽屉底部都有织机针脚般的黄铜轨道，用来固定天气样本。"
   },
   {
     slug: "greenhouse-map",
     worldSlug: "tin-flower-archive",
-    title: "温室根系地图",
+    title: "软件文明",
     type: "文明",
     tag: "地图 / 农艺史",
     summary: "这张地图不是画出来的，而是由植物根系慢慢长成。",
@@ -253,35 +253,35 @@ export const logs: LogEntry[] = [
 export const artifacts: Artifact[] = [
   {
     slug: "moonwell-ticket-pin",
-    name: "月井车票金属徽章",
-    sourceWorld: "月井车站",
+    name: "白骑士 亚克力立牌",
+    sourceWorld: "异常恋人：记忆覆写程序",
     status: "收藏室准备中",
-    price: "价格占位",
-    description: "一枚像被月光打孔的车票徽章。虚构占位商品。"
+    price: "售价待公布",
+    description: "白骑士角色立绘亚克力立牌。保留白骑士礼装、重剑等标志性设计。"
   },
   {
     slug: "tin-flower-acrylic",
-    name: "锡花透明亚克力",
-    sourceWorld: "锡花档案馆",
+    name: "未定义对象 亚克力立牌",
+    sourceWorld: "异常恋人：记忆覆写程序",
     status: "设计采样",
-    price: "价格占位",
-    description: "机械花瓣与温室标签叠印的桌面小物。虚构占位商品。"
+    price: "售价待公布",
+    description: "那个总是在出口之前等着你的异常程序。收录正式角色立绘与专属底座设计。"
   },
   {
     slug: "loom-sketchbook",
-    name: "幻境织机草图册",
-    sourceWorld: "Mirage Loom",
+    name: "版本仓库黑猫挂件",
+    sourceWorld: "异常恋人：记忆覆写程序",
     status: "暂未开放",
-    price: "价格占位",
-    description: "收录织机设定、图层拆解和失败草图的纸本。虚构占位商品。"
+    price: "售价待公布",
+    description: "以版本仓库守护者为原型制作的黑猫角色挂件。项圈与版本标记将保留游戏内设计。"
   },
   {
-    slug: "thread-music",
-    name: "发光丝线音乐集",
-    sourceWorld: "全工作室",
+    slug: "exceptionlover-music",
+    name: "异常恋人音乐集",
+    sourceWorld: "异常恋人：记忆覆写程序",
     status: "曲目整理中",
-    price: "价格占位",
-    description: "给深夜工坊、车站月台和黄铜温室写的短曲。虚构占位商品。"
+    price: "售价待公布",
+    description: "以电子音乐、钢琴、金属打击乐和环境音为主的原声集。"
   }
 ];
 

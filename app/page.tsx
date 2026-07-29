@@ -19,7 +19,7 @@ export default function Home() {
       </div>
       <section id="announcements" className="section notice-section">
         <SectionHeader eyebrow="Notice Board" title="最新公告">
-          钉在实验室公告墙上的近况、Demo 记录和开发便签。当前均为虚构占位内容。
+          钉在实验室公告墙上的近况、Demo 记录和开发便签。
         </SectionHeader>
         <div className="notice-grid">
           {announcements.map((item) => (
@@ -59,7 +59,7 @@ export default function Home() {
 
       <section id="codex" className="section codex-band">
         <SectionHeader eyebrow="World Compendium" title="世界图鉴与设定集">
-          像魔法研究手册与电子图鉴的结合，记录人物、文明、遗物、场景和异常温柔的技术。
+          魔法研究手册与电子图鉴的结合，记录人物、文明、遗物、场景和异常温柔的技术。
         </SectionHeader>
         <div className="codex-layout">
           <div className="codex-tabs" aria-label="图鉴条目">
@@ -72,7 +72,7 @@ export default function Home() {
           </div>
           <article className="codex-feature">
             <CardGlyph variant="book" />
-            <span className="archive-label">研究手册 / 虚构占位</span>
+            <span className="archive-label">世界 / 程序城邦</span>
             <h3>{codexEntries[0].title}</h3>
             <p>{codexEntries[0].summary}</p>
             <p>{codexEntries[0].body}</p>
@@ -106,7 +106,7 @@ export default function Home() {
 
       <section id="artifacts" className="section artifact-section">
         <SectionHeader eyebrow="Relic Cabinet" title="圣物收藏">
-          收藏室仍在准备中。这里将陈列从幻境带回的画册、徽章、音乐和设定集。
+          这里将陈列从幻境带回的画册、徽章、音乐和设定集。
         </SectionHeader>
         <div className="artifact-cabinet">
           {artifacts.map((artifact) => (
