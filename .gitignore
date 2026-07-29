@@ -65,13 +65,22 @@ Desktop.ini
 *.sbsar
 
 # Local original-art packs and personal source images
+/_local_workspace/
 /fantasy_weaver_character_layer_pack/
 /magical_loom_layer_pack/
 /幻境织机_分层素材包/
 /input/
+/output/
+/tmp/
+/temp/
 /bbq版造型.png
 /bb的照片.jpg
+/qiqi的照片.jpg
+/*的照片.jpg
+/*的照片.png
 /鼠标.png
+/_tmp_*
+/_preview_*
 
 # Unused/raw art backups under public (keep locally; do not deploy)
 /public/art/fantasy-weaver/
