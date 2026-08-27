@@ -37,7 +37,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <p>
             <Link href="/about">关于工作室</Link> · <Link href="/#join">加入通信网络</Link>
           </p>
-          <p className="site-copyright">© 2026 幻境织机 版权所有</p>
+          <p className="site-copyright">2026 · MirageLoom</p>
         </footer>
       </body>
     </html>
