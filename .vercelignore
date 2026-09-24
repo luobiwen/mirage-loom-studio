@@ -22,6 +22,10 @@
 !/public
 /public/*
 !/public/favicon.svg
+!/public/favicon.svg
+!/public/qingningmeng-cover-vertical.png
+!/public/hu-yu-character-card-v2.jpg
+!/public/xu-qingqing-character-card-v2.jpg
 !/public/art
 /public/art/*
 
